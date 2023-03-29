@@ -18,4 +18,17 @@ public class ArrayListUtilitiesTest {
         actualOutput = ArrayListUtilities.getListMax(input);
         assertEquals(expectedOutput, actualOutput);
     }
+
+    @Test
+    public void testWithoutLongWords() {
+        ArrayList<String>input;
+        ArrayList<String> expectedOutput;
+        ArrayList<String> actualOutput;
+
+        // some positive numbers
+        input = new ArrayList<>(Arrays.asList("rat", "paper", "computer", "bomb", "mouse", "keyboard"));
+        expectedOutput = new ArrayList<String> ( Arrays.asList("rat", "paper", "bomb", "mouse") );
+        actualOutput = ArrayListUtilities.withoutLongWords(input);
+        assertEquals(expectedOutput, actualOutput);
+    }
 }
