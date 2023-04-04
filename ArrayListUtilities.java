@@ -42,10 +42,11 @@ public class ArrayListUtilities {
     }
 
     public static void reverseInPlace(ArrayList<Double> nums) {
-        for (int fromEnd = nums.size() - 1; fromEnd >= 0; fromEnd--) {    
-            for (int fromStart = 0; fromStart < nums.size(); fromStart++) {
-                nums.add(fromStart, nums.get(fromEnd));
-            }
+        for (int i = nums.size() - 1; i >= 0; i--) {
+            nums.add(nums.get(i));
+        }
+        for (int i = 0; i <= (nums.size() / 2) + 1; i++) {
+            nums.remove(nums.get(i));
         }
     }
 
